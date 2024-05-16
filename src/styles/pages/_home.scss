@@ -1,0 +1,99 @@
+// -----------------------------------------------------------------------------
+// This file contains all unique styles for home page only
+// -----------------------------------------------------------------------------
+.banner {
+	min-height: 100vh;
+	position: relative;
+	padding: 100px 0;
+
+	@include media('>=tablet') {
+		text-align: right;
+		padding: 10.4167vw 0;
+		justify-content: flex-end;
+	}
+
+	h1 {
+		font-weight: 500;
+	}
+
+	.content-holder {
+		@include media('>=tablet') {
+			max-width: 38.1944vw;
+			margin-left: auto;
+		}
+	}
+
+	p {
+		@include media('>=tablet') {
+			max-width: 24.3056vw;
+			margin-left: auto;
+		}
+	}
+
+	.text {
+		margin-bottom: 50px;
+
+		@include media('>=tablet') {
+			margin-bottom: 10.4167vw;
+		}
+	}
+
+	.quick-details {
+		@include media('>=tablet') {
+			margin: 0 -1.3889vw;
+		}
+
+		li {
+			@include media('>=tablet') {
+				margin: 0 1.3889vw;
+			}
+		}
+
+		span {
+			display: block;
+		}
+	}
+
+	.social-links {
+		position: absolute;
+		bottom: 20px;
+		right: 25px;
+
+		@include media('>=tablet') {
+			right: auto;
+			bottom: auto;
+			left: -11.8056vw;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%) rotate(-90deg);
+		}
+
+		li {
+			margin-left: 10px;
+
+			@include media('>=tablet') {
+				margin: 0 3.4722vw;
+			}
+		}
+		i {
+			font-size: 20px;
+
+			@include media('>=tablet') {
+				display: none;
+			}
+		}
+
+		a {
+			color: $white;
+			font-size: 0;
+
+			@include media('>=tablet') {
+				font-size: 1.1111vw;
+			}
+
+			&:hover {
+				color: $aqua-blue;
+			}
+		}
+	}
+}

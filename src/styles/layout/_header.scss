@@ -1,0 +1,195 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site
+// -----------------------------------------------------------------------------
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+	padding: 20px 0;
+
+	@include media('>=tablet') {
+		padding: 2.4306vw 0;
+	}
+
+	.logo {
+		color: $white;
+
+		@include media('>=tablet') {
+			font-size: 2.0833vw;
+		}
+
+		span {
+			@include transition(color);
+			position: relative;
+			padding: 3px 10px;
+			color: $black;
+			z-index: 9;
+
+			@include media('>=tablet') {
+				padding: 0.2083vw 0.6944vw;
+			}
+
+			&:before {
+				@include transition(background-color);
+				position: absolute;
+				content: '';
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				background-color: $aqua-blue;
+				z-index: -1;
+			}
+		}
+
+
+		.nav-active & {
+			color: $black;
+
+			span {
+				color: $aqua-blue;
+
+				&:before {
+					background-color: $black;
+				}
+			}
+		}
+	}
+}
+
+.menu {
+	@include media('>=tablet') {
+		margin: 0 -0.1039vw;
+	}
+
+	li {
+		margin-bottom: 25px;
+
+		@include media('>=tablet') {
+			margin: 0 1.0417vw;
+		}
+	}
+
+	a {
+		color: $black;
+		text-transform: uppercase;
+
+		@include media('>=tablet') {
+			font-size: 1.25vw;
+			color: $white
+		}
+
+		&:hover {
+			color: $white;
+
+			@include media('>=tablet') {
+				color: $aqua-blue;
+			}
+		}
+	}
+}
+
+.nav {
+	@include transition(transform opacity visibility);
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	background-color: $aqua-blue;
+	z-index: -1;
+	height: 100vh;
+	padding: 80px 25px;
+	transform: translateX(100%);
+	opacity: 0;
+	visibility: hidden;
+
+	@include media('>=tablet') {
+		position: static;
+		padding: 0;
+		transform: none;
+		height: auto;
+		opacity: 1;
+		visibility: visible;
+		z-index: 9;
+		background-color: transparent;
+	}
+
+	.nav-active & {
+		opacity: 1;
+		visibility: visible;
+		transform: none;
+	}
+}
+
+.nav-opener {
+	width: 30px;
+	height: 30px;
+	display: block;
+	position: relative;
+	background-color: $aqua-blue;
+	padding: 5px;
+
+	@include media(">=tablet") {
+		display: none;
+	}
+
+	&:before,
+	&:after,
+	span {
+		@include transition(transform opacity background-color margin);
+		content: "";
+		height: 2px;
+		width: 80%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		border-radius: 2px;
+
+		@include media(">=tablet") {
+			height: 3px;
+		}
+	}
+
+	&:before {
+		margin-top: -8px;
+		background-color: $white;
+
+		@include media(">=tablet") {
+			margin-top: -10px;
+		}
+	}
+
+	span {
+		background-color: $white;
+	}
+
+	&:after {
+		margin-top: 8px;
+		background-color: $white;
+
+		@include media(">=tablet") {
+			margin-top: 10px;
+		}
+	}
+
+	.nav-active & {
+		&:before {
+			margin: 0;
+			background-color: $black;
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+
+		&:after {
+			margin: 0;
+			background-color: $black;
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+
+		span {
+			opacity: 0;
+		}
+	}
+}

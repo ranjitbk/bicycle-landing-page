@@ -1,0 +1,26 @@
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+.btn {
+	@include transition(background-color color);
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	background-color: $aqua-blue;
+	color: $black;
+	font-weight: 600;
+	font-size: 16px;
+	border: 2px solid $aqua-blue;
+	padding: 5px 15px;
+
+	@include media('>=tablet') {
+		padding: 0.6944vw 2.0833vw;
+		font-size: 1.25vw;
+	}
+
+	&:hover {
+		background-color: transparent;
+		color: $white;
+	}
+}

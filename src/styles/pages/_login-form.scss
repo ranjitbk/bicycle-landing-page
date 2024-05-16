@@ -1,0 +1,268 @@
+.login {
+	min-height: 100vh;
+	background-color: #fff5f5;
+	padding: 100px 0;
+
+	@include media('>=tablet') {
+		padding: 0;
+	}
+
+	.content-holder {
+		background-color:$white;
+		box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+		a {
+			&:hover {
+				color: rgb(255,19,0);
+			}
+		}
+	}
+
+	.columns {
+		@include media('>=tablet') {
+			min-height: 43.6111vw;
+		}
+	}
+
+	.left-block {
+		color: $black;
+		padding: 30px 20px;
+
+		@include media('>=tablet') {
+			width: 50%;
+			padding: 6.9444vw;
+		}
+
+		.logo {
+			display: block;
+			margin: 0 auto 15px;
+			width: 120px;
+
+			@include media('>=tablet') {
+				width: 10.4167vw;
+				margin-bottom: 1.7361vw;
+			}
+		}
+
+
+		h2 {
+			color: $black;
+			font-size: 20px;
+			margin-bottom: 25px;
+
+
+			@include media('>=tablet') {
+				margin-bottom: 1.7361vw;
+				font-size: 1.7361vw;
+			}
+		}
+	}
+
+	.right-block {
+		position: relative;
+		z-index: 9;
+		padding: 80px 20px 0;
+
+		@include media('>=tablet') {
+			width: 50%;
+			padding: 6.9444vw;
+			text-align: left;
+		}
+
+		h1 {
+			font-size: 25px;
+
+			@include media('>=tablet') {
+				font-size: 2.7778vw;
+
+			}
+
+			span {
+				color: transparent;
+				-webkit-text-stroke: 1px $white;
+			}
+		}
+
+		&:before {
+			position: absolute;
+			content: '';
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background-image: linear-gradient(to bottom, #ff0000, #ff8100);
+			z-index: -1;
+			border-radius: 100% 100% 0 0;
+
+			@include media('>=tablet') {
+				border-radius: 100% 0 0 100%;
+			}
+		}
+	}
+}
+
+.login-form {
+	.input-field {
+		position: relative;
+		margin-bottom: 15px;
+
+		@include media('>=tablet') {
+			margin-bottom: 1.7361vw;
+		}
+
+		i {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 10px;
+
+			@include media('>=tablet') {
+				right: 1.3889vw;
+				font-size: 1.3889vw;
+			}
+		}
+	}
+}
+
+.register-form {
+	display: none;
+}
+
+.register-form, 
+.forget-password-form {
+    display: none; /* Initially hide the register and forget password forms */
+}
+
+.checkbox-block {
+	margin-bottom: 15px;
+
+	@include media('>=tablet') {
+		margin-bottom: 1.7361vw;	
+	}
+}
+
+.forget-password {
+	color: $black;
+}
+
+.checkbox-wrap {
+	input {
+		position: absolute;
+		top: -99999px;
+		left: -99999px;
+		outline: 0;
+		visibility: hidden;
+	}
+
+	label {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		cursor: pointer;
+		padding-left: 25px;
+
+		@include media('>=tablet') {
+			padding-left: 1.7361vw;
+		}
+
+		&:before {
+			@include transition(background-color);
+			position: absolute;
+			content: '';
+			top: 50%;
+			left: 0;
+			// border: 2px solid $black;
+			background-color: #f5f5f5;
+			width: 15px;
+			height: 15px;
+			transform: translateY(-50%);
+
+			@include media('>=tablet') {
+				width: 1.25vw;
+				height: 1.25vw;
+			}
+		}
+
+		&:after {
+			@include transition(opacity visibility);
+			position: absolute;
+			content: '';
+			top: 8px;
+			left: 4px;
+			width: 8px;
+			height: 4px;
+			border: 1px solid $white;
+			border-top: 0;
+			border-right: 0;
+			transform: rotate(-45deg);
+			opacity: 0;
+			visibility: hidden;
+
+			@include media('>=tablet') {
+				top: 0.5556vw;
+				left: 0.3472vw;
+				width: 0.5556vw;
+				height: 0.2778vw;
+			}
+		}
+	}
+
+	input:checked ~ label {
+		&:before {
+			background-color: rgb(255,19,0);;
+		}
+		&:after {
+			opacity: 1;
+			visibility: visible;
+		} 
+	}
+}
+
+.register-block {
+	a {
+		color: $black;
+	}
+}
+
+.social-links {
+	@include media('>=tablet') {
+		position: absolute;
+		right: 0;
+		bottom: 1.7361vw;
+		display: block;
+	}
+
+	li {
+		margin: 0 10px;
+
+		@include media('>=tablet') {
+			margin: 0 0 0.6944vw;
+		}
+	}
+
+	a {
+		@include transition(background-color color);
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		color: $white;
+		background-color: rgb(102 102 102 / 31%);
+		width: 40px;
+		height: 40px;
+		border-radius: 50px 50px 0 0;
+		box-shadow: rgba($white, 0.2) 0px 8px 24px;
+
+		@include media('>=tablet') {
+			width: 4.1667vw;
+			height: 3.4722vw;
+			border-radius: 3.4722vw 0 0 3.4722vw;
+			font-size: 1.1111vw;
+		}
+
+		&:hover {
+			background-color: $black;
+			color: $white !important;
+		}
+	}
+}
